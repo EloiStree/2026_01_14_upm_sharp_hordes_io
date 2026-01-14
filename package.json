@@ -1,0 +1,29 @@
+
+{                                                                                
+  "name": "be.elab.hordesio",                              
+  "displayName": "Sharp Hordes IO Input",                        
+  "version": "0.0.1",                         
+  "unity": "2018.1",                             
+  "unityRelease": "",                             
+  "description": "Input to learn C# with HordesIO",                         
+  "keywords": ["Script","Tool"],                       
+  "dependencies":{},     
+  "relatedPackages":{},     
+  "samples": [
+    {
+      "displayName": "Demo Scene",
+      "description": "Demo on how to use the package",
+      "path": "Scene/Demo"
+    }
+  ] ,     
+  "author" : {
+"name":"",
+"mail":"",
+"url":""},     
+  "repository":{
+"type":"Git",
+"url":"https://github.com/EloiStree/2026_01_14_upm_sharp_hordes_io.git",
+"footprint":"",
+"revision":""},     
+  "category": "Script"                   
+} 
