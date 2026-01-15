@@ -17,10 +17,9 @@ namespace Eloi.HordesIO
         1       49  0x31  1049 2049
         */
 
-        public UnityEvent<int> m_onActionIntegerRequested;
-
+        [SerializeField] UnityEvent<int> m_onActionIntegerRequested;
         [Tooltip("Send Integer as action and in seconds parameter the delay in milliseconds")]
-        public UnityEvent<int, int> m_onActionIntegerRequestedWithDelayInMilliseconds;
+        [SerializeField] UnityEvent<int, int> m_onActionIntegerRequestedWithDelayInMilliseconds;
 
         [Header("Estimation Value")]
         public float m_rotateAnglePerSecond = 170;
@@ -30,51 +29,50 @@ namespace Eloi.HordesIO
 
         [Header("Move")]
 
-        public int m_moveForward = 1087;//w
-        public int m_moveBackward = 1083;//s
-        public int m_moveLeft = 1065;//a
-        public int m_moveRight = 1068;//d
-        public int m_rotateLeft = 1037;//Arrow Left
-        public int m_rotateRight = 1039;//Arrow Right
+        [SerializeField] int m_moveForward = 1087;//w
+        [SerializeField] int m_moveBackward = 1083;//s
+        [SerializeField] int m_moveLeft = 1065;//a
+        [SerializeField] int m_moveRight = 1068;//d
+        [SerializeField] int m_rotateLeft = 1037;//Arrow Left
+        [SerializeField] int m_rotateRight = 1039;//Arrow Right
 
-        public int m_jump = 1032;//Space
+        [SerializeField] int m_jump = 1032;//Space
 
         [Header("Power")]
 
-        public int m_firePower1 = 1049;//1
-        public int m_firePower2 = 1050;//2
-        public int m_firePower3 = 1051;//3
-        public int m_firePower4 = 1052;//4
-        public int m_firePower5 = 1053;//5
-        public int m_firePower6 = 1054;//6
-        public int m_firePower7 = 1055;//7
-        public int m_firePower8 = 1056;//8
-        public int m_firePower9 = 1057;//9
-        public int m_firePower0 = 1048;//0
+        [SerializeField] int m_firePower1 = 1049;//1
+        [SerializeField] int m_firePower2 = 1050;//2
+        [SerializeField] int m_firePower3 = 1051;//3
+        [SerializeField] int m_firePower4 = 1052;//4
+        [SerializeField] int m_firePower5 = 1053;//5
+        [SerializeField] int m_firePower6 = 1054;//6
+        [SerializeField] int m_firePower7 = 1055;//7
+        [SerializeField] int m_firePower8 = 1056;//8
+        [SerializeField] int m_firePower9 = 1057;//9
+        [SerializeField] int m_firePower0 = 1048;//0
         [Header("Select")]
 
-        public int m_targetNextEnemy = 1009;//Tab
-        public int m_targetNextAlly= 1088;//x
+        [SerializeField] int m_targetNextEnemy = 1009;//Tab
+        [SerializeField] int m_targetNextAlly= 1088;//x
         [Header("Menu")]
-        public int m_toggleMap = 1077;//m
-        public int m_toggleMenuSkills= 1075;//k
-        public int m_toggleMenuCharacter= 1067;//c
-        public int m_toggleMenuInventory= 1066;//b
-        public int m_toggleMenuClan = 1071;//g
-        public int m_toggleMenuPVP = 1086;//v
-        public int m_toggleMenuParty = 1080;//p
-        public int m_toggleMenuSocial = 1073;//i
-        public int m_toggleUntarget = 1027;//escape
+        [SerializeField] int m_toggleMap = 1077;//m
+        [SerializeField] int m_toggleMenuSkills= 1075;//k
+        [SerializeField] int m_toggleMenuCharacter= 1067;//c
+        [SerializeField] int m_toggleMenuInventory= 1066;//b
+        [SerializeField] int m_toggleMenuClan = 1071;//g
+        [SerializeField] int m_toggleMenuPVP = 1086;//v
+        [SerializeField] int m_toggleMenuParty = 1080;//p
+        [SerializeField] int m_toggleMenuSocial = 1073;//i
+        [SerializeField] int m_toggleUntarget = 1027;//escape
 
         [Header("Mouse")]
-        public int m_mouseClickLeft=1260;
-        public int m_mouseClickMiddle=1261;
-        public int m_mouseClickRight=1263;
-        public int m_mouseScrollUp = 1268;
-        public int m_mouseScrollDown=1269;
-        public int m_mouseScrollLeft=1270;
-        public int m_mouseScrollRight=1271;
-
+        [SerializeField] int m_mouseClickLeft=1260;
+        [SerializeField] int m_mouseClickMiddle=1261;
+        [SerializeField] int m_mouseClickRight=1263;
+        [SerializeField] int m_mouseScrollUp = 1268;
+        [SerializeField] int m_mouseScrollDown=1269;
+        [SerializeField] int m_mouseScrollLeft=1270;
+        [SerializeField] int m_mouseScrollRight=1271;
 
         #region GENERIC METHODS
         public void PressKey(int key)
@@ -111,6 +109,7 @@ namespace Eloi.HordesIO
 
         #endregion
 
+#region MOVE FORWARD 
 
         public void SetKeyDownMoveForward(bool isPressingDown)
             => SetKeyDown(m_moveForward, isPressingDown);
@@ -123,31 +122,60 @@ namespace Eloi.HordesIO
         public void StrokeMovingForwardMilliseconds(int milliseconds)
             => PressAndReleaseWithDelayInMilliseconds(m_moveForward, milliseconds);
 
+#endregion
 
+#region MOVE BACKWARD
 
         // Move Backward
         public void SetKeyDownMoveBackward(bool isPressingDown) => SetKeyDown(m_moveBackward, isPressingDown);
         public void StartMovingBackward() => PressKey(m_moveBackward);
         public void StopMovingBackward() => ReleaseKey(m_moveBackward);
 
+        public void StrokeMovingBackwardSeconds(float seconds)
+            => PressAndReleaseWithDelayInSeconds(m_moveBackward, seconds);
+        public void StrokeMovingBackwardMilliseconds(int milliseconds)
+            => PressAndReleaseWithDelayInMilliseconds(m_moveBackward, milliseconds);
+
+#endregion  
+
+#region ROTATE LEFT
         // Rotate Left
         public void SetKeyDownRotateLeft(bool isPressingDown) => SetKeyDown(m_rotateLeft, isPressingDown);
         public void StartRotatingLeft() => PressKey(m_rotateLeft);
         public void StopRotatingLeft() => ReleaseKey(m_rotateLeft);
 
+        public void StrokeRotatingLeftSeconds(float seconds)
+            => PressAndReleaseWithDelayInSeconds(m_rotateLeft, seconds);
+        public void StrokeRotatingLeftMilliseconds(int milliseconds)
+            => PressAndReleaseWithDelayInMilliseconds(m_rotateLeft, milliseconds);
+
+#endregion
+
+#region ROTATE RIGHT
         // Rotate Right
         public void SetKeyDownRotateRight(bool isPressingDown) => SetKeyDown(m_rotateRight, isPressingDown);
         public void StartRotatingRight() => PressKey(m_rotateRight);
         public void StopRotatingRight() => ReleaseKey(m_rotateRight);
 
+        public void StrokeRotatingRightSeconds(float seconds)
+            => PressAndReleaseWithDelayInSeconds(m_rotateRight, seconds);
+        public void StrokeRotatingRightMilliseconds(int milliseconds)
+            => PressAndReleaseWithDelayInMilliseconds(m_rotateRight, milliseconds);
+
+#endregion
+
+#region JUMP METHODS
         // Jump
         public void SetKeyDownJump(bool isPressingDown) => SetKeyDown(m_jump, isPressingDown);
         public void StartJump() => PressKey(m_jump);
         public void StopJump() => ReleaseKey(m_jump);
 
-
+        public void StrokeJumpSeconds(float seconds)
+            => PressAndReleaseWithDelayInSeconds(m_jump, seconds);
+        public void StrokeJumpMilliseconds(int milliseconds)
+            => PressAndReleaseWithDelayInMilliseconds(m_jump, milliseconds);
+#endregion
         
-
 
 
 
