@@ -1,15 +1,14 @@
 using UnityEngine;
 using UnityEngine.Events;
-
-public class HordesMono_ParseIntegerToText : MonoBehaviour
+namespace Eloi.HordesIO
 {
-
-    public UnityEvent<string> m_onRelayIntegerAsText;
-
-    public void PushIntegerToParseAsText(int integer)
+    public class HordesMono_ParseIntegerToText : MonoBehaviour
     {
-        m_onRelayIntegerAsText.Invoke("" + integer);
-        //m_onRelayIntegerAsText.Invoke(integer.ToString());
-
+        public UnityEvent<string> m_onRelayIntegerAsText;
+        public void PushIntegerToParseAsText(int integer)
+        {
+            m_onRelayIntegerAsText.Invoke("" + integer);
+            //m_onRelayIntegerAsText.Invoke(integer.ToString());
+        }
     }
 }
