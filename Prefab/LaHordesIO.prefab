@@ -60,6 +60,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_onIntegerRelayedHistoryChanged:
+    m_PersistentCalls:
+      m_Calls: []
   m_intHistory: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &1123445511986548737
 GameObject:
@@ -198,6 +201,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_rotateAnglePerSecond: 170
+  m_moveForwardSpeedPerSecond: 5.2
+  m_moveLeftRightSpeedPerSecond: 5.2
+  m_moveBackwardSpeedPerSecond: 1.5
   m_moveForward: 1038
   m_moveBackward: 1040
   m_moveLeft: 1038
@@ -206,12 +213,33 @@ MonoBehaviour:
   m_rotateRight: 1039
   m_jump: 1032
   m_firePower1: 1049
-  m_selectEnemy: 1009
+  m_firePower2: 1050
+  m_firePower3: 1051
+  m_firePower4: 1052
+  m_firePower5: 1053
+  m_firePower6: 1054
+  m_firePower7: 1055
+  m_firePower8: 1056
+  m_firePower9: 1057
+  m_firePower0: 1048
+  m_targetNextEnemy: 1009
+  m_targetNextAlly: 1088
   m_toggleMap: 1077
-  m_rotateAnglePerSecond: 170
-  m_moveForwardSpeedPerSecond: 5.2
-  m_moveLeftRightSpeedPerSecond: 5.2
-  m_moveBackwardSpeedPerSecond: 1.5
+  m_toggleMenuSkills: 1075
+  m_toggleMenuCharacter: 1067
+  m_toggleMenuInventory: 1066
+  m_toggleMenuClan: 1071
+  m_toggleMenuPVP: 1086
+  m_toggleMenuParty: 1080
+  m_toggleMenuSocial: 1073
+  m_toggleUntarget: 1027
+  m_mouseClickLeft: 1260
+  m_mouseClickMiddle: 1261
+  m_mouseClickRight: 1263
+  m_mouseScrollUp: 1268
+  m_mouseScrollDown: 1269
+  m_mouseScrollLeft: 1270
+  m_mouseScrollRight: 1271
 --- !u!1 &5927913372322639118
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,16 +351,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_messageInQueue: 0
-  m_targetRegistered: []
-  m_singleAlias:
-  - m_aliasNameId: Local Computer
-    m_ref:
-      m_ip: 127.0.0.1
-      m_port: 7073
-  - m_aliasNameId: Target
-    m_ref:
-      m_ip: 192.168.1.1
-      m_port: 7073
+  m_targetRegistered:
+  - m_ip: 127.0.0.1
+    m_port: 7073
+  m_singleAlias: []
   m_groupAlias: []
   m_lastSent: 
   m_lastException: 
